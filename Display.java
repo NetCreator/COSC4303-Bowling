@@ -39,7 +39,14 @@ public class Display {
 
     // #################
     static void displayScoreSheet() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        System.out.println("NAME|  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  | 10  |");
+        System.out.println("----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|");
+        System.out.println("| * | |X| | |X| | |9|/| |7|2| |9|-| |8|/| |7|/| |X| | |6|/|9|/|7|");
+        System.out.println("|#1 |  29 |  49 |  66 |  75 |  84 | 101 | 121 | 141 | 160 | 177 |");
+        System.out.println("|---------------------------------------------------------------|");
+        System.out.println("| * | |8|/| |8|/| |9|/| |8|-| |9|/| |8|1| |9|/| |9|/| |7|/|8|-| |");
+        System.out.println("|#2 |  18 |  37 |  55 |  63 |  81 |  90 | 109 | 126 | 144 | 152 |");
+        System.out.println("|---------------------------------------------------------------|");
     }
 
     /**
