@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////
-// Student name: Carl Hannusch, Mark Smullen
+// Student name:
 // Course: COSC 4303
 // Assignment: #2 - Object-Oriented Programming Review
-// File name: ScoreFrame.java
+// File name:
 // Purpose:
 //
 // Limitations:
@@ -11,10 +11,27 @@
 // Operating System:
 // Integrated Development Environment (IDE):
 // Compiler:
-// Build Directions: See the Bowling class
+// Build Directions:
 // Operational Status:
-///////////////////////////////////////////////////////////////////
-
+/////////////////////////////////////////////////////////////////// 
 public class ScoreFrame {
-
+    int score;
+    
+    public ScoreFrame(){
+       score = 0;
+    }
+    
+    public void scoreFrame(int first, int second){
+        if(first == 10){ //Strike
+            //toDo strike scoring
+            score = 10;
+        }
+        else if(first + second == 10){ // Spare
+            //toDo spare scoring
+            score = 10;
+        }
+        else{
+            score = first + second;
+        }
+    }
 }

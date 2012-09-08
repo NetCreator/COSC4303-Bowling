@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////
-// Student name: Carl Hannusch, Mark Smullen
+// Student name:Carl Hannusch
 // Course: COSC 4303
 // Assignment: #2 - Object-Oriented Programming Review
-// File name: ScoreSheet.java
+// File name:
 // Purpose:
 //
 // Limitations:
@@ -11,14 +11,16 @@
 // Operating System:
 // Integrated Development Environment (IDE):
 // Compiler:
-// Build Directions: See the Bowling class
+// Build Directions:
 // Operational Status:
-///////////////////////////////////////////////////////////////////
-
+/////////////////////////////////////////////////////////////////// 
 public class ScoreSheet {
-
-    static void scoreRoll(int firstRollScore, int secondRollScore, int currentPlayer, int turn) {
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
-}
+    ScoreFrame[][] scoreCard; 
+    public ScoreSheet(int players){
+        scoreCard = new ScoreFrame[players][10];
+    }// End ScoreSheet
+    
+    public void scoreRoll(int pinsFirstRoll, int pinsSecondRoll, int player, int turn){
+        scoreCard[player][turn].scoreFrame(pinsFirstRoll,pinsSecondRoll);
+    }// End scoreRoll
+}// End ScoreSheet
