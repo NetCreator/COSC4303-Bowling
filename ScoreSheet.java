@@ -17,4 +17,8 @@
 
 public class ScoreSheet {
 
+    static void scoreRoll(int firstRollScore, int secondRollScore, int currentPlayer, int turn) {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
 }
