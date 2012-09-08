@@ -22,5 +22,8 @@ public class ScoreSheet {
     
     public void scoreRoll(int pinsFirstRoll, int pinsSecondRoll, int player, int turn){
         scoreCard[player][turn].scoreFrame(pinsFirstRoll,pinsSecondRoll);
+        if(turn == 10){
+            Display.displayScoreSheet();
+        }
     }// End scoreRoll
 }// End ScoreSheet
