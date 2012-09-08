@@ -36,6 +36,10 @@ public class Display {
         return displayInstance;
     }
 
+    static void displayScoreSheet() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
     /**
      * Ask the player if they want to play and return the result.
      * @return The option given by the player - to play or not to play.
