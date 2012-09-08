@@ -30,12 +30,14 @@ public class Display {
      * Get your Display instance!
      * @return The instance of the Display.
      */
+    // #################
     public static Display getInstance() {
         if (displayInstance == null)
             displayInstance = new Display();
         return displayInstance;
     }
 
+    // #################
     static void displayScoreSheet() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -45,10 +47,12 @@ public class Display {
      * @return The option given by the player - to play or not to play.
      * Extra notes: Extensible for multiple modes of play later on.
      */
+    // #################
     public int startGameInterface() {
         return 1;
     }
 
+    // #################
     public int getNumberOfPlayers() {
         Scanner s = new Scanner(System.in);
         int numPlayers;
@@ -65,6 +69,7 @@ public class Display {
         return numPlayers;
     }
 
+    // #################
     public String getPlayerName() {
         String playerName;
         Scanner s = new Scanner(System.in);
@@ -76,6 +81,7 @@ public class Display {
         return playerName;
     }
 
+    // #################
     private Display() {
     }
 }

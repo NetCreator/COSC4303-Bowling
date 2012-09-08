@@ -29,9 +29,11 @@ public class Controller {
     private int numPins;
     // private int turn; -- This is int "i" in a for 0 <= i < 10
     private ScoreSheet scoreSheet;
+    private Display display;
 
+    // #################
     public Controller() {
-        Display display = Display.getInstance();
+        display = Display.getInstance();
         int numPlayers;
         int firstRollScore;
         int secondRollScore;
@@ -69,11 +71,12 @@ public class Controller {
                     secondRollScore = 10 - numPins;
                 }
 
-                ScoreSheet.scoreRoll(firstRollScore, secondRollScore, currentPlayer, turn);
+                scoreSheet.scoreRoll(firstRollScore, secondRollScore, currentPlayer, turn);
             }
         }
     }
 
+    // #################
     private int rollDice() {
         int pinsStanding = 0;
         int side;
@@ -112,6 +115,7 @@ public class Controller {
         return pinsStanding;
     }
 
+    // #################
     private void resetPins() {
         for (int i = 0; i < 10; i++) {
             pinSet[i].setStanding(true);

@@ -15,18 +15,21 @@
 // Operational Status: Functional - untested
 /////////////////////////////////////////////////////////////////// 
 public class Die {
-    public final int[] side = {0,0,0,0,0,1};
-    public final int[] redSide = {0,0,0,0,1,2};
+    public static final int[] side = {0,0,0,0,0,1};
+    public static final int[] redSide = {0,0,0,0,1,2};
     private boolean standing;
-    
+
+    // #################
     public Die(){
         standing = true;        
     }// End Die
-    
+
+    // #################
     public boolean getStanding(){
         return standing;
     }// End getStanding
-    
+
+    // #################
     public void setStanding(boolean state){
         standing = state;
     }// End setStanding

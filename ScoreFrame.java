@@ -16,11 +16,13 @@
 /////////////////////////////////////////////////////////////////// 
 public class ScoreFrame {
     int score;
-    
+
+    // #################
     public ScoreFrame(){
        score = 0;
     }
-    
+
+    // #################
     public void scoreFrame(int first, int second){
         if(first == 10){ //Strike
             //toDo strike scoring

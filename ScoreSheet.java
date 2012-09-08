@@ -15,15 +15,20 @@
 // Operational Status:
 /////////////////////////////////////////////////////////////////// 
 public class ScoreSheet {
-    ScoreFrame[][] scoreCard; 
-    public ScoreSheet(int players){
+
+    private ScoreFrame[][] scoreCard;
+
+    // #################
+    public ScoreSheet(int players) {
         scoreCard = new ScoreFrame[players][10];
     }// End ScoreSheet
-    
-    public void scoreRoll(int pinsFirstRoll, int pinsSecondRoll, int player, int turn){
-        scoreCard[player][turn].scoreFrame(pinsFirstRoll,pinsSecondRoll);
-        if(turn == 10){
+
+    // #################
+    public void scoreRoll(int pinsFirstRoll, int pinsSecondRoll, int player, int turn) {
+        scoreCard[player][turn].scoreFrame(pinsFirstRoll, pinsSecondRoll);
+        if (turn == 10) {
             Display.displayScoreSheet();
         }
     }// End scoreRoll
 }// End ScoreSheet
+
