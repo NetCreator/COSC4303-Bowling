@@ -17,9 +17,23 @@
 
 public class Bowling {
     public static void main(String[] args) {
+        int numPlayers;
+
+        if(args.length < 1) {
+            System.out.println("java Bowling <number of computer players>");
+            return;
+        } else {
+            numPlayers = Integer.parseInt(args[0]);
+
+            if(numPlayers < 1 || numPlayers > 99) {
+                System.out.println("java Bowling <number of computer players>");
+                return;
+            }
+        }
+
         Display display = Display.getInstance();
         while (display.startGameInterface() != 0) {
-            Controller gameController = new Controller();
+            Controller gameController = new Controller(numPlayers);
         }
     }
 }

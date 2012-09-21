@@ -25,9 +25,9 @@ public class Die {
     }// End Die
 
     // #################
-    public boolean getStanding(){
+    public boolean isStanding(){
         return standing;
-    }// End getStanding
+    }// End isStanding
 
     // #################
     public void setStanding(boolean state){

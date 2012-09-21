@@ -18,7 +18,7 @@ import java.util.ArrayList;
 // Integrated Development Environment (IDE): NetBeans IDE 6.9.1
 // Compiler: javac
 // Build Directions: See the Bowling class
-// Operational Status: Broken - thinks I'm in a static context.
+// Operational Status: Working and tested.
 ///////////////////////////////////////////////////////////////////
 
 public class Controller {
@@ -32,23 +32,20 @@ public class Controller {
     private Display display;
 
     // #################
-    public Controller() {
+    public Controller(int numPlayers) {
         display = Display.getInstance();
-        int numPlayers;
         int firstRollScore;
         int secondRollScore;
 
-        numPlayers = display.getNumberOfPlayers();
-
-        if (numPlayers == -1) {
-            return;
-        } else {
-            for (int i = 0; i < numPlayers; i++) {
-                Player p = new Player(display.getPlayerName());
-                playerList.add(p);
-            }
+        playerList = new ArrayList<Player>();
+            
+        for (int i = 0; i < numPlayers; i++) {
+            String pName = "#" + (i+1);
+            Player p = new Player(pName);
+            playerList.add(p);
         }
 
+        pinSet = new Die[10];
         for (int i = 0; i < 10; i++) {
             pinSet[i] = new Die();
         }
@@ -82,7 +79,7 @@ public class Controller {
         int side;
 
         for (int i = 0; i < 10; i++) {
-            if (!pinSet[i].getStanding())
+            if (!pinSet[i].isStanding())
                 continue;
 
             if (i == 9) {

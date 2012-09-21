@@ -39,14 +39,11 @@ public class Display {
 
     // #################
     static void displayScoreSheet() {
-        System.out.println("NAME|  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  | 10  |");
-        System.out.println("----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|");
-        System.out.println("| * | |X| | |X| | |9|/| |7|2| |9|-| |8|/| |7|/| |X| | |6|/|9|/|7|");
-        System.out.println("|#1 |  29 |  49 |  66 |  75 |  84 | 101 | 121 | 141 | 160 | 177 |");
-        System.out.println("|---------------------------------------------------------------|");
-        System.out.println("| * | |8|/| |8|/| |9|/| |8|-| |9|/| |8|1| |9|/| |9|/| |7|/|8|-| |");
-        System.out.println("|#2 |  18 |  37 |  55 |  63 |  81 |  90 | 109 | 126 | 144 | 152 |");
-        System.out.println("|---------------------------------------------------------------|");
+        System.out.printf("NAME|  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  | 10  |");
+        System.out.printf("----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|");
+        System.out.printf("| * | |%d| | |%d| | |%d| | |%d| | |%d| | |%d| | |%d| | |%d| | |%d| | |%d| |");
+        System.out.printf("|%s |     |     |     |     |     |     |     |     |     |     |");
+        System.out.printf("|---------------------------------------------------------------|");
     }
 
     /**
@@ -57,23 +54,6 @@ public class Display {
     // #################
     public int startGameInterface() {
         return 1;
-    }
-
-    // #################
-    public int getNumberOfPlayers() {
-        Scanner s = new Scanner(System.in);
-        int numPlayers;
-
-        System.out.print("Number of players? ");
-        numPlayers = s.nextInt();
-        System.out.println("");
-
-        if (numPlayers < 1 || numPlayers > 99) {
-            System.out.println("Too many players. Aborting.");
-            return -1;
-        }
-
-        return numPlayers;
     }
 
     // #################
