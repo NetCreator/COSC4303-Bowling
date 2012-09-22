@@ -18,7 +18,7 @@ public class ScoreFrame {
     int score;
 
     // #################
-    public ScoreFrame(){
+    public ScoreFrame() {
        score = 0;
     }
 

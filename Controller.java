@@ -23,12 +23,14 @@ import java.util.ArrayList;
 
 public class Controller {
 
-    private ArrayList<Player> playerList;
+    static ArrayList<Player> playerList;
     private Die[] pinSet;
+    public static final int MAX_TURNS = 10;
+    public static final int MAX_PINS = 10;
     // private int currentPlayer; -- This is player "p" in a foreach
     private int numPins;
     // private int turn; -- This is int "i" in a for 0 <= i < 10
-    private ScoreSheet scoreSheet;
+    static ScoreSheet scoreSheet;
     private Display display;
 
     // #################
@@ -45,27 +47,27 @@ public class Controller {
             playerList.add(p);
         }
 
-        pinSet = new Die[10];
-        for (int i = 0; i < 10; i++) {
+        pinSet = new Die[MAX_PINS];
+        for (int i = 0; i < MAX_PINS; i++) {
             pinSet[i] = new Die();
         }
 
         scoreSheet = new ScoreSheet(numPlayers);
 
-        for (int turn = 0; turn < 10; turn++) {
+        for (int turn = 0; turn < MAX_TURNS; turn++) {
             for (int currentPlayer = 0; currentPlayer < numPlayers; currentPlayer++) {
                 firstRollScore = 0;
                 secondRollScore = 0;
 
                 resetPins();
-                numPins = 10;
+                numPins = MAX_PINS;
 
                 numPins = rollDice();
-                firstRollScore = 10 - numPins;
+                firstRollScore = MAX_PINS - numPins;
 
                 if (numPins > 0) {
                     numPins = rollDice();
-                    secondRollScore = 10 - numPins;
+                    secondRollScore = MAX_PINS - numPins;
                 }
 
                 scoreSheet.scoreRoll(firstRollScore, secondRollScore, currentPlayer, turn);
@@ -78,7 +80,7 @@ public class Controller {
         int pinsStanding = 0;
         int side;
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < MAX_PINS; i++) {
             if (!pinSet[i].isStanding())
                 continue;
 
@@ -114,7 +116,7 @@ public class Controller {
 
     // #################
     private void resetPins() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < MAX_PINS; i++) {
             pinSet[i].setStanding(true);
         }
     }

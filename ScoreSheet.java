@@ -20,15 +20,25 @@ public class ScoreSheet {
 
     // #################
     public ScoreSheet(int players) {
-        scoreCard = new ScoreFrame[players][10];
+        scoreCard = new ScoreFrame[players][Controller.MAX_TURNS];
+
+        for (int i = 0; i < players; i++) {
+            for (int j = 0; j < Controller.MAX_TURNS; j++) {
+                scoreCard[i][j] = new ScoreFrame();
+            }
+        }
     }// End ScoreSheet
 
     // #################
     public void scoreRoll(int pinsFirstRoll, int pinsSecondRoll, int player, int turn) {
         scoreCard[player][turn].scoreFrame(pinsFirstRoll, pinsSecondRoll);
-        if (turn == 10) {
+        if (turn == Controller.MAX_TURNS-1) {
             Display.displayScoreSheet();
         }
     }// End scoreRoll
+
+    ScoreFrame[][] getScoreCard() {
+        return scoreCard;
+    }
 }// End ScoreSheet
 

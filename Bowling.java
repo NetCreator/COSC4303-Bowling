@@ -32,8 +32,8 @@ public class Bowling {
         }
 
         Display display = Display.getInstance();
-        while (display.startGameInterface() != 0) {
+        //while (display.startGameInterface() != 0) {
             Controller gameController = new Controller(numPlayers);
-        }
+        //}
     }
 }

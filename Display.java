@@ -39,11 +39,20 @@ public class Display {
 
     // #################
     static void displayScoreSheet() {
-        System.out.printf("NAME|  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  | 10  |");
-        System.out.printf("----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|");
-        System.out.printf("| * | |%d| | |%d| | |%d| | |%d| | |%d| | |%d| | |%d| | |%d| | |%d| | |%d| |");
-        System.out.printf("|%s |     |     |     |     |     |     |     |     |     |     |");
-        System.out.printf("|---------------------------------------------------------------|");
+        ScoreFrame[][] ss = Controller.scoreSheet.getScoreCard();
+
+        System.out.println("NAME|  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  | 10  |");
+        System.out.printf("----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|\n");
+        for(int i = 0; i < Controller.playerList.size(); i++) {
+            System.out.printf("| * |");
+            for (int j = 0; j < Controller.MAX_TURNS; j++) {
+                System.out.printf(" |%d| |", ss[i][j].score);
+            }
+            System.out.println("");
+            System.out.printf("|%s |     |     |     |     |     |     |     |     |     |     |\n",
+                    Controller.playerList.get(i).getName());
+            System.out.println("|---------------------------------------------------------------|");
+        }
     }
 
     /**
@@ -54,18 +63,6 @@ public class Display {
     // #################
     public int startGameInterface() {
         return 1;
-    }
-
-    // #################
-    public String getPlayerName() {
-        String playerName;
-        Scanner s = new Scanner(System.in);
-
-        System.out.print("Enter your name: ");
-        playerName = s.nextLine();
-        System.out.println("");
-
-        return playerName;
     }
 
     // #################
