@@ -46,10 +46,13 @@ public class Display {
         for(int i = 0; i < Controller.playerList.size(); i++) {
             System.out.printf("| * |");
             for (int j = 0; j < Controller.MAX_TURNS; j++) {
-                System.out.printf(" |%d| |", ss[i][j].score);
+                if (ss[i][j].score == 10)
+                    System.out.print(" |X| |");
+                else
+                    System.out.printf(" |%d| |", ss[i][j].score);
             }
             System.out.println("");
-            System.out.printf("|%s |     |     |     |     |     |     |     |     |     |     |\n",
+            System.out.printf("|%-3s|     |     |     |     |     |     |     |     |     |     |\n",
                     Controller.playerList.get(i).getName());
             System.out.println("|---------------------------------------------------------------|");
         }

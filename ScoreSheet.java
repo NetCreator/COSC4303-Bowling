@@ -32,9 +32,6 @@ public class ScoreSheet {
     // #################
     public void scoreRoll(int pinsFirstRoll, int pinsSecondRoll, int player, int turn) {
         scoreCard[player][turn].scoreFrame(pinsFirstRoll, pinsSecondRoll);
-        if (turn == Controller.MAX_TURNS-1) {
-            Display.displayScoreSheet();
-        }
     }// End scoreRoll
 
     ScoreFrame[][] getScoreCard() {

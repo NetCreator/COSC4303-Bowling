@@ -60,17 +60,25 @@ public class Controller {
                 secondRollScore = 0;
 
                 resetPins();
-                numPins = MAX_PINS;
 
                 numPins = rollDice();
                 firstRollScore = MAX_PINS - numPins;
 
                 if (numPins > 0) {
                     numPins = rollDice();
-                    secondRollScore = MAX_PINS - numPins;
+                    secondRollScore = MAX_PINS - firstRollScore - numPins;
                 }
 
+                System.err.println("First Roll (Player " + (currentPlayer+1)
+                        + ", Turn " + turn +"): " + firstRollScore);
+                System.err.println("Second Roll (Player " + (currentPlayer+1)
+                        + ", Turn " + turn + "): " + secondRollScore);
+
                 scoreSheet.scoreRoll(firstRollScore, secondRollScore, currentPlayer, turn);
+            }
+
+            if (turn == MAX_TURNS-1) {
+                Display.displayScoreSheet();
             }
         }
     }
@@ -87,27 +95,21 @@ public class Controller {
             if (i == 9) {
                 // Red-Circle Die Side
                 side = Die.redSide[(int) (Math.random() * 6)];
-
-                if (side == 2) {
-                    if (pinsStanding > 0) {
-                        pinsStanding++;
-                    } else {
-                        pinSet[i].setStanding(false);
-                    }
-                } else if (side == 1) {
-                    pinsStanding++;
-                } else {
-                    pinSet[i].setStanding(false);
-                }
             } else {
                 // Normal die side
                 side = Die.side[(int) (Math.random() * 6)];
-                
-                if (side == 1) {
+            }
+
+            if (side == 2) {
+                if (pinsStanding > 0) {
                     pinsStanding++;
                 } else {
                     pinSet[i].setStanding(false);
                 }
+            } else if (side == 1) {
+                pinsStanding++;
+            } else {
+                pinSet[i].setStanding(false);
             }
         }
 
